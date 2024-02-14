@@ -1,16 +1,59 @@
+<!-- FILEPATH: /C:/Users/suppa/OneDrive/Desktop/lostaduckAI.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My basic AI</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css" title="My basic AI style">
+	<style>
+		body {
+			background: linear-gradient(to bottom, white, black);
+			height: 100vh; /* Set the body height to 100% of the viewport height */
+			margin: 0; /* Remove default margin */
+			display: flex; /* Use flexbox to center content vertically */
+			justify-content: center; /* Center content horizontally */
+			align-items: center; /* Center content vertically */
+		}
+
+		.audio-container {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+
+		.ai-container {
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	</style>
 </head>
 <body>
-<iframe
-	src="https://lostaduck-rvc-beta-v2-0618-get.hf.space"
-	frameborder="100"
-	width="2000"
-	height="1000"
-></iframe>
+	<div class="audio-container">
+		<audio src="C:\Users\suppa\OneDrive\Desktop\New folder (6)\Y2meta.app - Shelter - Porter Robinson and Madeon (piano) (320 kbps).mp3" id="my_audio" loop="loop" autoplay controls></audio>
+	</div>
 
+	<div class="ai-container">
+		<iframe src="https://lostaduck-rvc-beta-v2-0618-get.hf.space" frameborder="0" width="500" height="500" alt="Lostaduck RVC Beta V2 page" loading="lazy"></iframe>
+	</div>
+
+	<button id="playButton" style="position: fixed; top: 10px; right: 10px;">Play Music</button>
+
+	<script>
+		var audio = document.getElementById("my_audio");
+		var playButton = document.getElementById("playButton");
+
+		playButton.addEventListener("click", function() {
+			if (audio.paused) {
+				audio.play();
+				playButton.textContent = "Pause Music";
+			} else {
+				audio.pause();
+				playButton.textContent = "Play Music";
+			}
+		});
+	</script>
 </body>
 </html>
